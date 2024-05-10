@@ -10,3 +10,11 @@ public enum MonsterAction
     Heal,
     Buff
 }
+
+public enum BattleUnitType
+{
+    None,
+    Character,
+    Monster
+
+}
