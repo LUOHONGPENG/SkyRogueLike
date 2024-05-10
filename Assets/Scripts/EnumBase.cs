@@ -2,13 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum MonsterAction
+public enum BasicActionEffect
 {
     Attack,
     Block,
-    AttackBlock,
     Heal,
-    Buff
+    Buff,//debuff
+    Debuff,
+    Special
+}
+
+public enum BasicActionRange
+{
+    Self,
+    Single,
+    Group
+}
+
+
+public enum MonsterAction
+{
+    SingleAttack,
+    AttackBlock,
+    SelfBlock,
+    GroupBlock,
+    SelfHeal,
+    SelfBuff
 }
 
 public enum BattleUnitType
@@ -18,3 +37,4 @@ public enum BattleUnitType
     Monster
 
 }
+

@@ -21,6 +21,14 @@ public partial class MonsterExcelItem : ExcelItemBase
 	/// </summary>>
 	public float maxHP;
 	/// <summary>
+	/// 行动0
+	/// </summary>>
+	public MonsterAction actionType_0;
+	/// <summary>
+	/// 行动0数值
+	/// </summary>>
+	public int[] actionValue_0;
+	/// <summary>
 	/// 行动1
 	/// </summary>>
 	public MonsterAction actionType_1;
@@ -36,14 +44,6 @@ public partial class MonsterExcelItem : ExcelItemBase
 	/// 行动2数值
 	/// </summary>>
 	public int[] actionValue_2;
-	/// <summary>
-	/// 行动3
-	/// </summary>>
-	public MonsterAction actionType_3;
-	/// <summary>
-	/// 行动3数值
-	/// </summary>>
-	public int[] actionValue_3;
 }
 
 
@@ -88,6 +88,32 @@ public partial class MonsterExcelData : ExcelDataBase<MonsterExcelItem>
 		if(item == null)
 			return default;
 		return item.maxHP;
+	}
+
+	public MonsterAction GetActionType_0(int id)
+	{
+		var item = GetMonsterExcelItem(id);
+		if(item == null)
+			return default;
+		return item.actionType_0;
+	}
+
+	public int[] GetActionValue_0(int id)
+	{
+		var item = GetMonsterExcelItem(id);
+		if(item == null)
+			return default;
+		return item.actionValue_0;
+	}
+	public int GetActionValue_0(int id, int index)
+	{
+		var item0 = GetMonsterExcelItem (id);
+		if(item0 == null)
+			return default;
+		var item1 = item0.actionValue_0;
+		if(item1 == null || index < 0 || index >= item1.Length)
+			return default;
+		return item1[index];
 	}
 
 	public MonsterAction GetActionType_1(int id)
@@ -142,32 +168,6 @@ public partial class MonsterExcelData : ExcelDataBase<MonsterExcelItem>
 		return item1[index];
 	}
 
-	public MonsterAction GetActionType_3(int id)
-	{
-		var item = GetMonsterExcelItem(id);
-		if(item == null)
-			return default;
-		return item.actionType_3;
-	}
-
-	public int[] GetActionValue_3(int id)
-	{
-		var item = GetMonsterExcelItem(id);
-		if(item == null)
-			return default;
-		return item.actionValue_3;
-	}
-	public int GetActionValue_3(int id, int index)
-	{
-		var item0 = GetMonsterExcelItem (id);
-		if(item0 == null)
-			return default;
-		var item1 = item0.actionValue_3;
-		if(item1 == null || index < 0 || index >= item1.Length)
-			return default;
-		return item1[index];
-	}
-
 	#endregion
 }
 
@@ -192,12 +192,12 @@ public class MonsterAssetAssignment
 			excelDataAsset.items[i].id = StringUtility.StringToInt(itemRowDic["id"]);
 			excelDataAsset.items[i].monsterName = itemRowDic["monsterName"];
 			excelDataAsset.items[i].maxHP = StringUtility.StringToFloat(itemRowDic["maxHP"]);
+			excelDataAsset.items[i].actionType_0 = StringUtility.StringToEnum<MonsterAction>(itemRowDic["actionType_0"]);
+			excelDataAsset.items[i].actionValue_0 = StringUtility.StringToIntArray(itemRowDic["actionValue_0"]);
 			excelDataAsset.items[i].actionType_1 = StringUtility.StringToEnum<MonsterAction>(itemRowDic["actionType_1"]);
 			excelDataAsset.items[i].actionValue_1 = StringUtility.StringToIntArray(itemRowDic["actionValue_1"]);
 			excelDataAsset.items[i].actionType_2 = StringUtility.StringToEnum<MonsterAction>(itemRowDic["actionType_2"]);
 			excelDataAsset.items[i].actionValue_2 = StringUtility.StringToIntArray(itemRowDic["actionValue_2"]);
-			excelDataAsset.items[i].actionType_3 = StringUtility.StringToEnum<MonsterAction>(itemRowDic["actionType_3"]);
-			excelDataAsset.items[i].actionValue_3 = StringUtility.StringToIntArray(itemRowDic["actionValue_3"]);
 		}
 		if(!Directory.Exists(excelAssetPath))
 			Directory.CreateDirectory(excelAssetPath);

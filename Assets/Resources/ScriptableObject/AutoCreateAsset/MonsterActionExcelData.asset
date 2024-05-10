@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0911f1b36fd119144a739b27bc1f9a09, type: 3}
+  m_Name: MonsterActionExcelData
+  m_EditorClassIdentifier: 
+  items:
+  - id: 1001
+    monsterActionName: 0
+    actionEffect_0: 0
+    actionRange_0: 1
+    actionEffect_1: 0
+    actionRange_1: 0
+  - id: 1002
+    monsterActionName: 1
+    actionEffect_0: 0
+    actionRange_0: 1
+    actionEffect_1: 1
+    actionRange_1: 0
+  - id: 2001
+    monsterActionName: 2
+    actionEffect_0: 1
+    actionRange_0: 0
+    actionEffect_1: 0
+    actionRange_1: 0
+  - id: 2002
+    monsterActionName: 3
+    actionEffect_0: 1
+    actionRange_0: 2
+    actionEffect_1: 0
+    actionRange_1: 0
+  - id: 3001
+    monsterActionName: 4
+    actionEffect_0: 2
+    actionRange_0: 0
+    actionEffect_1: 0
+    actionRange_1: 0
+  - id: 4001
+    monsterActionName: 5
+    actionEffect_0: 3
+    actionRange_0: 0
+    actionEffect_1: 0
+    actionRange_1: 0
