@@ -7,9 +7,12 @@ using UnityEngine;
 public class ExcelDataManager : Singleton<ExcelDataManager>
 {
     public MonsterExcelData monsterConfig;
+    public MonsterActionExcelData monsterActionConfig;
+
     public void Init()
     {
         monsterConfig = GetExcelData<MonsterExcelData, MonsterExcelItem>();
+        monsterActionConfig = GetExcelData<MonsterActionExcelData, MonsterActionExcelItem>();
 
         //Init all ExcelDataBase
         foreach (var keyPair in excelDataDic)
@@ -18,6 +21,8 @@ public class ExcelDataManager : Singleton<ExcelDataManager>
             MethodInfo mi = typeExcelData.GetMethod("Init");
             mi.Invoke(keyPair.Value, null);
         }
+
+        monsterActionConfig.InitExtra();
     }
 
     Dictionary<Type, object> excelDataDic = new Dictionary<Type, object>();
