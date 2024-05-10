@@ -15,37 +15,37 @@ MonoBehaviour:
   items:
   - id: 1001
     monsterActionName: 0
-    actionEffect_0: 0
-    actionRange_0: 1
-    actionEffect_1: 0
-    actionRange_1: 0
-  - id: 1002
-    monsterActionName: 1
-    actionEffect_0: 0
-    actionRange_0: 1
-    actionEffect_1: 1
-    actionRange_1: 0
-  - id: 2001
-    monsterActionName: 2
-    actionEffect_0: 1
-    actionRange_0: 0
-    actionEffect_1: 0
-    actionRange_1: 0
-  - id: 2002
-    monsterActionName: 3
     actionEffect_0: 1
     actionRange_0: 2
     actionEffect_1: 0
     actionRange_1: 0
+  - id: 1002
+    monsterActionName: 1
+    actionEffect_0: 1
+    actionRange_0: 2
+    actionEffect_1: 2
+    actionRange_1: 1
+  - id: 2001
+    monsterActionName: 2
+    actionEffect_0: 2
+    actionRange_0: 1
+    actionEffect_1: 0
+    actionRange_1: 0
+  - id: 2002
+    monsterActionName: 3
+    actionEffect_0: 2
+    actionRange_0: 3
+    actionEffect_1: 0
+    actionRange_1: 0
   - id: 3001
     monsterActionName: 4
-    actionEffect_0: 2
-    actionRange_0: 0
+    actionEffect_0: 3
+    actionRange_0: 1
     actionEffect_1: 0
     actionRange_1: 0
   - id: 4001
     monsterActionName: 5
-    actionEffect_0: 3
-    actionRange_0: 0
+    actionEffect_0: 4
+    actionRange_0: 1
     actionEffect_1: 0
     actionRange_1: 0

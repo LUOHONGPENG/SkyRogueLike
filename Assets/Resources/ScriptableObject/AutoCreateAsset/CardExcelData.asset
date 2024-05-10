@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b1736590ac9ba34caa28e6e7dd0caab, type: 3}
+  m_Name: CardExcelData
+  m_EditorClassIdentifier: 
+  items:
+  - id: 1001
+    name: "\u6253\u51FB"
+    desc: "\u5BF9\u654C\u4EBA\u9020\u6210{0}\u70B9\u4F24\u5BB3"
+    actionEffect_0: 1
+    actionRange_0: 2
+    actionValue_0: 5
+    actionTime_0: 1
+    actionEffect_1: 0
+    actionRange_1: 0
+    actionValue_1: 0
+    actionTime_1: 0
+    actionEffect_2: 0
+    actionRange_2: 0
+    actionValue_2: 0
+    actionTime_2: 0
+  - id: 1002
+    name: "\u9632\u5FA1"
+    desc: "\u7ED9\u81EA\u5DF1\u4E0A{0}\u70B9\u62A4\u76FE\u503C"
+    actionEffect_0: 2
+    actionRange_0: 1
+    actionValue_0: 5
+    actionTime_0: 1
+    actionEffect_1: 0
+    actionRange_1: 0
+    actionValue_1: 0
+    actionTime_1: 0
+    actionEffect_2: 0
+    actionRange_2: 0
+    actionValue_2: 0
+    actionTime_2: 0
+  - id: 1003
+    name: "\u6CBB\u7597"
+    desc: "\u5BF9\u81EA\u5DF1\u6CBB\u7597{0}\u70B9\u751F\u547D"
+    actionEffect_0: 3
+    actionRange_0: 1
+    actionValue_0: 5
+    actionTime_0: 1
+    actionEffect_1: 0
+    actionRange_1: 0
+    actionValue_1: 0
+    actionTime_1: 0
+    actionEffect_2: 0
+    actionRange_2: 0
+    actionValue_2: 0
+    actionTime_2: 0

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public enum BasicActionEffect
 {
+    None,
     Attack,
     Block,
     Heal,
@@ -14,6 +15,7 @@ public enum BasicActionEffect
 
 public enum BasicActionRange
 {
+    None,
     Self,
     Single,
     Group
@@ -22,6 +24,7 @@ public enum BasicActionRange
 
 public enum MonsterAction
 {
+    None,
     SingleAttack,
     AttackBlock,
     SelfBlock,

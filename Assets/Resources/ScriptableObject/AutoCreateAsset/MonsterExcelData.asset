@@ -16,18 +16,24 @@ MonoBehaviour:
   - id: 1001
     monsterName: "\u5C0F\u602AA"
     maxHP: 10
-    actionType_0: 0
+    actionType_0: 1
     actionValue_0: 05000000
-    actionType_1: 2
+    actionTime_0: 01000000
+    actionType_1: 3
     actionValue_1: 03000000
-    actionType_2: 3
+    actionTime_1: 01000000
+    actionType_2: 5
     actionValue_2: 03000000
+    actionTime_2: 01000000
   - id: 1002
     monsterName: "\u5C0F\u602AB"
     maxHP: 8
-    actionType_0: 1
+    actionType_0: 2
     actionValue_0: 0300000003000000
-    actionType_1: 2
+    actionTime_0: 0100000001000000
+    actionType_1: 3
     actionValue_1: 05000000
+    actionTime_1: 01000000
     actionType_2: 0
     actionValue_2: 
+    actionTime_2: 

@@ -19,7 +19,7 @@ public partial class MonsterExcelItem : ExcelItemBase
 	/// <summary>
 	/// 生命值
 	/// </summary>>
-	public float maxHP;
+	public int maxHP;
 	/// <summary>
 	/// 行动0
 	/// </summary>>
@@ -29,6 +29,10 @@ public partial class MonsterExcelItem : ExcelItemBase
 	/// </summary>>
 	public int[] actionValue_0;
 	/// <summary>
+	/// 行动0次数
+	/// </summary>>
+	public int[] actionTime_0;
+	/// <summary>
 	/// 行动1
 	/// </summary>>
 	public MonsterAction actionType_1;
@@ -37,6 +41,10 @@ public partial class MonsterExcelItem : ExcelItemBase
 	/// </summary>>
 	public int[] actionValue_1;
 	/// <summary>
+	/// 行动1次数
+	/// </summary>>
+	public int[] actionTime_1;
+	/// <summary>
 	/// 行动2
 	/// </summary>>
 	public MonsterAction actionType_2;
@@ -44,6 +52,10 @@ public partial class MonsterExcelItem : ExcelItemBase
 	/// 行动2数值
 	/// </summary>>
 	public int[] actionValue_2;
+	/// <summary>
+	/// 行动2次数
+	/// </summary>>
+	public int[] actionTime_2;
 }
 
 
@@ -82,7 +94,7 @@ public partial class MonsterExcelData : ExcelDataBase<MonsterExcelItem>
 		return item.monsterName;
 	}
 
-	public float GetMaxHP(int id)
+	public int GetMaxHP(int id)
 	{
 		var item = GetMonsterExcelItem(id);
 		if(item == null)
@@ -116,6 +128,24 @@ public partial class MonsterExcelData : ExcelDataBase<MonsterExcelItem>
 		return item1[index];
 	}
 
+	public int[] GetActionTime_0(int id)
+	{
+		var item = GetMonsterExcelItem(id);
+		if(item == null)
+			return default;
+		return item.actionTime_0;
+	}
+	public int GetActionTime_0(int id, int index)
+	{
+		var item0 = GetMonsterExcelItem (id);
+		if(item0 == null)
+			return default;
+		var item1 = item0.actionTime_0;
+		if(item1 == null || index < 0 || index >= item1.Length)
+			return default;
+		return item1[index];
+	}
+
 	public MonsterAction GetActionType_1(int id)
 	{
 		var item = GetMonsterExcelItem(id);
@@ -137,6 +167,24 @@ public partial class MonsterExcelData : ExcelDataBase<MonsterExcelItem>
 		if(item0 == null)
 			return default;
 		var item1 = item0.actionValue_1;
+		if(item1 == null || index < 0 || index >= item1.Length)
+			return default;
+		return item1[index];
+	}
+
+	public int[] GetActionTime_1(int id)
+	{
+		var item = GetMonsterExcelItem(id);
+		if(item == null)
+			return default;
+		return item.actionTime_1;
+	}
+	public int GetActionTime_1(int id, int index)
+	{
+		var item0 = GetMonsterExcelItem (id);
+		if(item0 == null)
+			return default;
+		var item1 = item0.actionTime_1;
 		if(item1 == null || index < 0 || index >= item1.Length)
 			return default;
 		return item1[index];
@@ -168,6 +216,24 @@ public partial class MonsterExcelData : ExcelDataBase<MonsterExcelItem>
 		return item1[index];
 	}
 
+	public int[] GetActionTime_2(int id)
+	{
+		var item = GetMonsterExcelItem(id);
+		if(item == null)
+			return default;
+		return item.actionTime_2;
+	}
+	public int GetActionTime_2(int id, int index)
+	{
+		var item0 = GetMonsterExcelItem (id);
+		if(item0 == null)
+			return default;
+		var item1 = item0.actionTime_2;
+		if(item1 == null || index < 0 || index >= item1.Length)
+			return default;
+		return item1[index];
+	}
+
 	#endregion
 }
 
@@ -191,13 +257,16 @@ public class MonsterAssetAssignment
 			excelDataAsset.items[i] = new MonsterExcelItem();
 			excelDataAsset.items[i].id = StringUtility.StringToInt(itemRowDic["id"]);
 			excelDataAsset.items[i].monsterName = itemRowDic["monsterName"];
-			excelDataAsset.items[i].maxHP = StringUtility.StringToFloat(itemRowDic["maxHP"]);
+			excelDataAsset.items[i].maxHP = StringUtility.StringToInt(itemRowDic["maxHP"]);
 			excelDataAsset.items[i].actionType_0 = StringUtility.StringToEnum<MonsterAction>(itemRowDic["actionType_0"]);
 			excelDataAsset.items[i].actionValue_0 = StringUtility.StringToIntArray(itemRowDic["actionValue_0"]);
+			excelDataAsset.items[i].actionTime_0 = StringUtility.StringToIntArray(itemRowDic["actionTime_0"]);
 			excelDataAsset.items[i].actionType_1 = StringUtility.StringToEnum<MonsterAction>(itemRowDic["actionType_1"]);
 			excelDataAsset.items[i].actionValue_1 = StringUtility.StringToIntArray(itemRowDic["actionValue_1"]);
+			excelDataAsset.items[i].actionTime_1 = StringUtility.StringToIntArray(itemRowDic["actionTime_1"]);
 			excelDataAsset.items[i].actionType_2 = StringUtility.StringToEnum<MonsterAction>(itemRowDic["actionType_2"]);
 			excelDataAsset.items[i].actionValue_2 = StringUtility.StringToIntArray(itemRowDic["actionValue_2"]);
+			excelDataAsset.items[i].actionTime_2 = StringUtility.StringToIntArray(itemRowDic["actionTime_2"]);
 		}
 		if(!Directory.Exists(excelAssetPath))
 			Directory.CreateDirectory(excelAssetPath);
