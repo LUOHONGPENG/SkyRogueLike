@@ -56,6 +56,10 @@ public partial class MonsterExcelItem : ExcelItemBase
 	/// 行动2次数
 	/// </summary>>
 	public int[] actionTime_2;
+	/// <summary>
+	/// 图片路径
+	/// </summary>>
+	public string iconUrl;
 }
 
 
@@ -234,6 +238,14 @@ public partial class MonsterExcelData : ExcelDataBase<MonsterExcelItem>
 		return item1[index];
 	}
 
+	public string GetIconUrl(int id)
+	{
+		var item = GetMonsterExcelItem(id);
+		if(item == null)
+			return default;
+		return item.iconUrl;
+	}
+
 	#endregion
 }
 
@@ -267,6 +279,7 @@ public class MonsterAssetAssignment
 			excelDataAsset.items[i].actionType_2 = StringUtility.StringToEnum<MonsterAction>(itemRowDic["actionType_2"]);
 			excelDataAsset.items[i].actionValue_2 = StringUtility.StringToIntArray(itemRowDic["actionValue_2"]);
 			excelDataAsset.items[i].actionTime_2 = StringUtility.StringToIntArray(itemRowDic["actionTime_2"]);
+			excelDataAsset.items[i].iconUrl = itemRowDic["iconUrl"];
 		}
 		if(!Directory.Exists(excelAssetPath))
 			Directory.CreateDirectory(excelAssetPath);

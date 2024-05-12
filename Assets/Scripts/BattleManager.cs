@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class BattleManager : MonoBehaviour
 {
-    public BattleData battleData;
+    public BattleViewManager battleViewManager;
 
+    [HideInInspector]
+    public BattleData battleData;
 
     public void Init()
     {
@@ -20,14 +22,6 @@ public class BattleManager : MonoBehaviour
 
 
     }
-
-
-
-
-
-
-
-
 
 
 

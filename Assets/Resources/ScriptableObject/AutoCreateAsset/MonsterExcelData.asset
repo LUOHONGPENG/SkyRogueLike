@@ -25,6 +25,7 @@ MonoBehaviour:
     actionType_2: 5
     actionValue_2: 03000000
     actionTime_2: 01000000
+    iconUrl: monster1001
   - id: 1002
     monsterName: "\u5C0F\u602AB"
     maxHP: 8
@@ -37,3 +38,4 @@ MonoBehaviour:
     actionType_2: 0
     actionValue_2: 
     actionTime_2: 
+    iconUrl: monster1002
