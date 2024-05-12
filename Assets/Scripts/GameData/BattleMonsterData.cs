@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class BattleMonsterData : BattleUnitData
 {
-    int excelID = -1;
+    public int excelID = -1;
     private MonsterExcelItem excelItem;
 
     public BattleMonsterData(int excelID)
     {
+        this.excelID = excelID;
         excelItem = ExcelDataManager.Instance.monsterConfig.GetMonsterExcelItem(excelID);
         maxHP = excelItem.maxHP;
         curHP = maxHP;

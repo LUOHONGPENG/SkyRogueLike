@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor.U2D.Animation;
 using UnityEngine;
 
@@ -19,9 +20,21 @@ public class BattleManager : MonoBehaviour
     public void BattleStart(int levelID)
     {
         LevelExcelItem levelExcelItem = ExcelDataManager.Instance.levelConfig.GetLevelExcelItem(levelID);
+        battleData = new BattleData(PublicTool.GetGameData().characterData);
 
+        //Generate Monster 
+        battleViewManager.ClearMonster();
+        for(int i = 0; i < levelExcelItem.listMonsterID.Length; i++)
+        {
+            GenerateMonster(levelExcelItem.listMonsterID[i]);
+        }
     }
 
+    public void GenerateMonster(int excelID)
+    {
+        BattleMonsterData monsterData = battleData.AddMonsterData(excelID);
+        battleViewManager.GenerateMonsterView(monsterData);
+    }
 
     #region DealAction
 

@@ -308,6 +308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterView: {fileID: 4891507057602185557}
   tfMonsterView: {fileID: 4950978572480182999}
+  pfMonsterView: {fileID: 290731895312918231, guid: 4caf66ff0c548f64498ea9039e3e9d22, type: 3}
   listFixedMonsterPos:
   - {fileID: 6812721175756858121}
   - {fileID: 1863207206699140337}

@@ -14,6 +14,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     public override void Init()
     {
+        ExcelDataManager.Instance.Init();
         gameData = new GameData();
         battleManager.Init();
 

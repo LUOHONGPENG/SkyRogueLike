@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class MonsterView : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public SpriteRenderer spMonster;
+    private int excelID = -1;
 
-    // Update is called once per frame
-    void Update()
+    public void Init(BattleMonsterData monsterData)
     {
-        
+        excelID = monsterData.excelID;
+        MonsterExcelItem excelData = ExcelDataManager.Instance.monsterConfig.GetMonsterExcelItem(excelID);
+        spMonster.sprite = Resources.Load("Sprite/" + excelData.iconUrl, typeof(Sprite)) as Sprite;
     }
 }

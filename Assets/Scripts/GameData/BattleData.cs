@@ -27,7 +27,7 @@ public class BattleData
         battleCharacterData.maxHP = characterData.maxHP;
     }
 
-    public void AddMonsterData(int excelID)
+    public BattleMonsterData AddMonsterData(int excelID)
     {
         BattleMonsterData monsterData = new BattleMonsterData(excelID);
         monsterKeyID++;
@@ -35,5 +35,6 @@ public class BattleData
         dicMonsterData.Add(monsterKeyID, monsterData);
         listMonsterData.Add(monsterData);
 
+        return monsterData;
     }
 }
