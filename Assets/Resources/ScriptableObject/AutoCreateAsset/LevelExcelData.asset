@@ -15,7 +15,5 @@ MonoBehaviour:
   items:
   - id: 1
     listMonsterID: e9030000
-    listMonsterNum: 01000000
   - id: 2
-    listMonsterID: e9030000ea030000
-    listMonsterNum: 0200000001000000
+    listMonsterID: e9030000e9030000ea030000

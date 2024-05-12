@@ -16,7 +16,12 @@ public class GameManager : MonoSingleton<GameManager>
     {
         gameData = new GameData();
         battleManager.Init();
+
+        StartBattle(1);
     }
 
-
+    public void StartBattle(int levelID)
+    {
+        battleManager.BattleStart(levelID);
+    }
 }

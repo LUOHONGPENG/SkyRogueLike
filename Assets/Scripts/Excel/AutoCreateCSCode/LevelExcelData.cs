@@ -16,10 +16,6 @@ public partial class LevelExcelItem : ExcelItemBase
 	/// 怪物ID列表
 	/// </summary>>
 	public int[] listMonsterID;
-	/// <summary>
-	/// 怪物数量列表
-	/// </summary>>
-	public int[] listMonsterNum;
 }
 
 
@@ -68,24 +64,6 @@ public partial class LevelExcelData : ExcelDataBase<LevelExcelItem>
 		return item1[index];
 	}
 
-	public int[] GetListMonsterNum(int id)
-	{
-		var item = GetLevelExcelItem(id);
-		if(item == null)
-			return default;
-		return item.listMonsterNum;
-	}
-	public int GetListMonsterNum(int id, int index)
-	{
-		var item0 = GetLevelExcelItem (id);
-		if(item0 == null)
-			return default;
-		var item1 = item0.listMonsterNum;
-		if(item1 == null || index < 0 || index >= item1.Length)
-			return default;
-		return item1[index];
-	}
-
 	#endregion
 }
 
@@ -109,7 +87,6 @@ public class LevelAssetAssignment
 			excelDataAsset.items[i] = new LevelExcelItem();
 			excelDataAsset.items[i].id = StringUtility.StringToInt(itemRowDic["id"]);
 			excelDataAsset.items[i].listMonsterID = StringUtility.StringToIntArray(itemRowDic["listMonsterID"]);
-			excelDataAsset.items[i].listMonsterNum = StringUtility.StringToIntArray(itemRowDic["listMonsterNum"]);
 		}
 		if(!Directory.Exists(excelAssetPath))
 			Directory.CreateDirectory(excelAssetPath);

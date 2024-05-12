@@ -18,16 +18,9 @@ public class BattleManager : MonoBehaviour
 
     public void BattleStart(int levelID)
     {
-
-
+        LevelExcelItem levelExcelItem = ExcelDataManager.Instance.levelConfig.GetLevelExcelItem(levelID);
 
     }
-
-
-
-
-
-
 
 
     #region DealAction

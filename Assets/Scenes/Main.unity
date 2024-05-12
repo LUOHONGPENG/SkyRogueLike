@@ -398,6 +398,10 @@ PrefabInstance:
       propertyPath: battleManager
       value: 
       objectReference: {fileID: 6530962830111484181}
+    - target: {fileID: 950215785445823746, guid: a374b91de0db001409e1e01cb6b92342, type: 3}
+      propertyPath: dontDestroyOnLoad
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
