@@ -39,7 +39,6 @@ public class CardManager : MonoBehaviour
 
     public void TurnStartDrawCard()
     {
-        Debug.Log(111);
         if (canDrawNum <= listCardID_stack.Count)
         {
             listCardID_hand = PublicTool.DrawNum(canDrawNum, listCardID_stack, listCardID_used);
@@ -85,9 +84,34 @@ public class CardManager : MonoBehaviour
         }
     }
 
-    public void UseCard()
+    public void UseCard(CardView card,Vector2 pos)
     {
-        Debug.Log("UseCard ");
+        CardExcelItem excelItem = ExcelDataManager.Instance.cardConfig.GetCardExcelItem(card.cardID);
+
+        if (excelItem.targetEnemy)
+        {
+            Ray ray = Camera.main.ScreenPointToRay(pos);
+            RaycastHit2D[] hits = Physics2D.RaycastAll(ray.origin, ray.direction, 100f, 1 << LayerMask.NameToLayer("Monster"));
+            for(int i = 0; i < hits.Length; i++)
+            {
+                RaycastHit2D hit = hits[i];
+                Debug.Log(hit.transform?.gameObject.name);
+                if (hit.collider != null && hit.collider.transform.parent.GetComponent<MonsterView>() != null)
+                {
+                    int monsterPosID = hit.collider.transform.parent.GetComponent<MonsterView>().posID;
+                    TypeEventSystem.Global.Send(new UseCardMonsterRequest(excelItem.id, monsterPosID));
+                    Destroy(card.gameObject);
+                    Debug.Log("UseCard");
+                    break;
+                }
+            }
+        }
+        else
+        {
+
+
+        }
+
     }
     #endregion
 }

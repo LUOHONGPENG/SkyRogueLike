@@ -14,13 +14,15 @@ public class MonsterView : MonoBehaviour
 
 
     private int excelID = -1;
+    public int posID = -1;
     private BattleMonsterData monsterData;
     private bool isInit = false;
 
-    public void Init(BattleMonsterData monsterData)
+    public void Init(BattleMonsterData monsterData,int posID)
     {
         this.monsterData = monsterData;
         excelID = monsterData.excelID;
+        this.posID = posID;
         MonsterExcelItem excelData = ExcelDataManager.Instance.monsterConfig.GetMonsterExcelItem(excelID);
         spMonster.sprite = Resources.Load("Sprite/" + excelData.iconUrl, typeof(Sprite)) as Sprite;
 

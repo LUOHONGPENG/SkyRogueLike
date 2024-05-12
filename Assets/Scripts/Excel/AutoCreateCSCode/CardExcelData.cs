@@ -17,6 +17,10 @@ public partial class CardExcelItem : ExcelItemBase
 	/// </summary>>
 	public string name;
 	/// <summary>
+	/// 对敌人用
+	/// </summary>>
+	public bool targetEnemy;
+	/// <summary>
 	/// 描述
 	/// </summary>>
 	public string desc;
@@ -104,6 +108,14 @@ public partial class CardExcelData : ExcelDataBase<CardExcelItem>
 		if(item == null)
 			return default;
 		return item.name;
+	}
+
+	public bool GetTargetEnemy(int id)
+	{
+		var item = GetCardExcelItem(id);
+		if(item == null)
+			return default;
+		return item.targetEnemy;
 	}
 
 	public string GetDesc(int id)
@@ -233,6 +245,7 @@ public class CardAssetAssignment
 			excelDataAsset.items[i] = new CardExcelItem();
 			excelDataAsset.items[i].id = StringUtility.StringToInt(itemRowDic["id"]);
 			excelDataAsset.items[i].name = itemRowDic["name"];
+			excelDataAsset.items[i].targetEnemy = StringUtility.StringToBool(itemRowDic["targetEnemy"]);
 			excelDataAsset.items[i].desc = itemRowDic["desc"];
 			excelDataAsset.items[i].actionEffect_0 = StringUtility.StringToEnum<BasicActionEffect>(itemRowDic["actionEffect_0"]);
 			excelDataAsset.items[i].actionRange_0 = StringUtility.StringToEnum<BasicActionRange>(itemRowDic["actionRange_0"]);

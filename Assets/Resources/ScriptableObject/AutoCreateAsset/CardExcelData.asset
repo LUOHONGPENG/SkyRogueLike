@@ -15,6 +15,7 @@ MonoBehaviour:
   items:
   - id: 1001
     name: "\u6253\u51FB"
+    targetEnemy: 1
     desc: "\u5BF9\u654C\u4EBA\u9020\u6210{0}\u70B9\u4F24\u5BB3"
     actionEffect_0: 1
     actionRange_0: 2
@@ -30,6 +31,7 @@ MonoBehaviour:
     actionTime_2: 0
   - id: 1002
     name: "\u9632\u5FA1"
+    targetEnemy: 0
     desc: "\u7ED9\u81EA\u5DF1\u4E0A{0}\u70B9\u62A4\u76FE\u503C"
     actionEffect_0: 2
     actionRange_0: 1
@@ -45,6 +47,7 @@ MonoBehaviour:
     actionTime_2: 0
   - id: 1003
     name: "\u6CBB\u7597"
+    targetEnemy: 0
     desc: "\u5BF9\u81EA\u5DF1\u6CBB\u7597{0}\u70B9\u751F\u547D"
     actionEffect_0: 3
     actionRange_0: 1

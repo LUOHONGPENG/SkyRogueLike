@@ -29,7 +29,7 @@ public class BattleViewManager : MonoBehaviour
         int posID = listMonsterView.Count;
         GameObject objMonster = GameObject.Instantiate(pfMonsterView, tfMonsterView);
         MonsterView itemMonster = objMonster.GetComponent<MonsterView>();
-        itemMonster.Init(monsterData);
+        itemMonster.Init(monsterData, posID);
 
         itemMonster.transform.position = listFixedMonsterPos[posID].position;
         listMonsterView.Add(itemMonster);

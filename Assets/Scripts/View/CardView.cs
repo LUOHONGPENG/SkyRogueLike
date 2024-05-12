@@ -12,11 +12,12 @@ public class CardView : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoint
     public TextMeshProUGUI txName;
     public TextMeshProUGUI txDesc;
 
-    private int cardID = -1;
+    public int cardID = -1;
 
     public void Init(int cardID,CardManager parent)
     {
         this.cardID = cardID;
+        this.cardManager = parent;
 
         CardExcelItem cardItem = ExcelDataManager.Instance.cardConfig.GetCardExcelItem(cardID);
         txName.text = cardItem.name;
@@ -56,6 +57,7 @@ public class CardView : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoint
             Vector2 pointerPos = eventData.position;
             if (!EventSystem.current.IsPointerOverGameObject())
             {
+                cardManager.UseCard(this, pointerPos);
                 //TypeEventSystem.Global.Send(new PropUIDragDropInput(propIndex, pointerPos));
             }
             canvasGroupThis.blocksRaycasts = true;
