@@ -29,6 +29,9 @@ public class BattleManager : MonoBehaviour
         {
             GenerateMonster(levelExcelItem.listMonsterID[i]);
         }
+
+        TypeEventSystem.Global.Send(new BattleStartRequest());
+        CharacterTurnStart();
     }
 
     public void GenerateMonster(int excelID)
@@ -36,6 +39,18 @@ public class BattleManager : MonoBehaviour
         BattleMonsterData monsterData = battleData.AddMonsterData(excelID);
         battleViewManager.GenerateMonsterView(monsterData);
     }
+
+    public void CharacterTurnStart()
+    {
+        TypeEventSystem.Global.Send(new TurnStartDrawCardRequset());
+
+    }
+
+    public void MonsterTurnStart()
+    {
+
+    }
+
 
     #region DealAction
 

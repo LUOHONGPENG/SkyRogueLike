@@ -15,7 +15,20 @@ public class GameData
     public GameData()
     {
         characterData = new BattleCharacterData();
-        listCardID.Clear();
+        InitCard();
         Debug.Log("InitGameData");
+    }
+
+    public void InitCard()
+    {
+        listCardID.Clear();
+
+        for(int i = 0; i < 5; i++)
+        {
+            listCardID.Add(1001);
+        }
+        listCardID.Add(1002);
+        listCardID.Add(1003);
+
     }
 }

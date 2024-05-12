@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tfCard: {fileID: 5819384637001258748}
-  pfCard: {fileID: 0}
+  pfCard: {fileID: 4953005130356523074, guid: 5a189aa958a667b43b19dbcacaf6f4cd, type: 3}
   canDrawNum: 5
 --- !u!1 &5750122548463165302
 GameObject:

@@ -21,6 +21,14 @@ public class CardManager : MonoBehaviour
     public void Init()
     {
         gameData = PublicTool.GetGameData();
+
+        TypeEventSystem.Global.Register<BattleStartRequest>(e => {
+            BattleStartDeal();
+        }).UnRegisterWhenGameObjectDestroyed(gameObject);
+
+        TypeEventSystem.Global.Register<TurnStartDrawCardRequset>(e => {
+            TurnStartDrawCard();
+        }).UnRegisterWhenGameObjectDestroyed(gameObject);
     }
 
     public void BattleStartDeal()
@@ -31,6 +39,7 @@ public class CardManager : MonoBehaviour
 
     public void TurnStartDrawCard()
     {
+        Debug.Log(111);
         if (canDrawNum <= listCardID_stack.Count)
         {
             listCardID_hand = PublicTool.DrawNum(canDrawNum, listCardID_stack, listCardID_used);
@@ -53,7 +62,7 @@ public class CardManager : MonoBehaviour
                 listCardID_hand.Add(twiceDraw[i]);
             }
         }
-
+        ShowHandCardView();
     }
 
     public void MoveUsedCardToStack()
@@ -62,4 +71,23 @@ public class CardManager : MonoBehaviour
         listCardID_used.Clear();
     }
 
+
+    #region View 
+
+    public void ShowHandCardView()
+    {
+        for(int i = 0; i < listCardID_hand.Count; i++)
+        {
+            int thisCardID = listCardID_hand[i];
+            GameObject objCard = GameObject.Instantiate(pfCard, tfCard);
+            CardView itemCard = objCard.GetComponent<CardView>();
+            itemCard.Init(thisCardID,this);
+        }
+    }
+
+    public void UseCard()
+    {
+        Debug.Log("UseCard ");
+    }
+    #endregion
 }

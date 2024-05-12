@@ -8,11 +8,6 @@ public class GameManager : MonoSingleton<GameManager>
     public BattleManager battleManager;
     public UIManager uiManager;
 
-    private void Start()
-    {
-        Init();
-    }
-
     public override void Init()
     {
         ExcelDataManager.Instance.Init();
