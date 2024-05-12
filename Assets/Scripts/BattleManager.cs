@@ -21,6 +21,21 @@ public class BattleManager : MonoBehaviour
 
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     #region DealAction
 
     public void DealCardAction(List<BattleActionInfo> listActionInfo,int targetID)

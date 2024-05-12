@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class BattleData
 {
+    //Data
     public BattleCharacterData battleCharacterData;
     public Dictionary<int, BattleMonsterData> dicMonsterData = new Dictionary<int, BattleMonsterData>();
     public List<BattleMonsterData> listMonsterData = new List<BattleMonsterData>();
+
+    private int monsterKeyID = 0;
 
     public BattleMonsterData GetTargetBattleMonster(int keyID)
     {
@@ -24,8 +27,13 @@ public class BattleData
         battleCharacterData.maxHP = characterData.maxHP;
     }
 
-    public void AddMonster()
+    public void AddMonsterData(int excelID)
     {
-        
+        BattleMonsterData monsterData = new BattleMonsterData(excelID);
+        monsterKeyID++;
+
+        dicMonsterData.Add(monsterKeyID, monsterData);
+        listMonsterData.Add(monsterData);
+
     }
 }
