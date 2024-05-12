@@ -6,6 +6,7 @@ public class GameManager : MonoSingleton<GameManager>
 {
     public GameData gameData;
     public BattleManager battleManager;
+    public UIManager uiManager;
 
     private void Start()
     {
@@ -17,6 +18,7 @@ public class GameManager : MonoSingleton<GameManager>
         ExcelDataManager.Instance.Init();
         gameData = new GameData();
         battleManager.Init();
+        uiManager.Init();
 
         StartBattle(1);
     }
