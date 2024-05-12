@@ -22,9 +22,9 @@ public class BattleData
 
     public BattleData(BattleCharacterData characterData)
     {
-        battleCharacterData = new BattleCharacterData();
-        battleCharacterData.curHP = characterData.curHP;
-        battleCharacterData.maxHP = characterData.maxHP;
+        battleCharacterData = characterData;
+/*        battleCharacterData.curHP = characterData.curHP;
+        battleCharacterData.maxHP = characterData.maxHP;*/
     }
 
     public BattleMonsterData AddMonsterData(int excelID)

@@ -4,5 +4,9 @@ using UnityEngine;
 
 public class BattleCharacterData : BattleUnitData
 {
-
+    public BattleCharacterData()
+    {
+        curHP = 100;
+        maxHP = 100;
+    }
 }

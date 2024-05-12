@@ -21,6 +21,7 @@ public class BattleManager : MonoBehaviour
     {
         LevelExcelItem levelExcelItem = ExcelDataManager.Instance.levelConfig.GetLevelExcelItem(levelID);
         battleData = new BattleData(PublicTool.GetGameData().characterData);
+        battleViewManager.characterView.Init(PublicTool.GetGameData().characterData);//Init Character View
 
         //Generate Monster 
         battleViewManager.ClearMonster();
