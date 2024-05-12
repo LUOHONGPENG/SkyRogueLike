@@ -13,7 +13,9 @@ public class BattleManager : MonoBehaviour
 
     public void Init()
     {
-
+        TypeEventSystem.Global.Register<UseCardMonsterRequest>(e => {
+            DealCardActionRequest(e.cardID,e.monsterPosID);
+        }).UnRegisterWhenGameObjectDestroyed(gameObject);
 
     }
 
@@ -53,6 +55,14 @@ public class BattleManager : MonoBehaviour
 
 
     #region DealAction
+
+    public void DealCardActionRequest(int cardID,int monsterPosID)
+    {
+        CardExcelItem cardExcelItem = ExcelDataManager.Instance.cardConfig.GetCardExcelItem(cardID);
+
+        List<BattleActionInfo> listActionInfo = cardExcelItem.listActionInfo;
+        DealCardAction(listActionInfo, monsterPosID);
+    }
 
     public void DealCardAction(List<BattleActionInfo> listActionInfo,int targetID)
     {

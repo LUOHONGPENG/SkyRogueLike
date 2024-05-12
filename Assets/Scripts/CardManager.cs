@@ -98,7 +98,7 @@ public class CardManager : MonoBehaviour
                 Debug.Log(hit.transform?.gameObject.name);
                 if (hit.collider != null && hit.collider.transform.parent.GetComponent<MonsterView>() != null)
                 {
-                    int monsterPosID = hit.collider.transform.parent.GetComponent<MonsterView>().posID;
+                    int monsterPosID = hit.collider.transform.parent.GetComponent<MonsterView>().GetKeyID();
                     TypeEventSystem.Global.Send(new UseCardMonsterRequest(excelItem.id, monsterPosID));
                     Destroy(card.gameObject);
                     Debug.Log("UseCard");

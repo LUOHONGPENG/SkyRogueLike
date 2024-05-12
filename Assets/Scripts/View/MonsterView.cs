@@ -38,4 +38,9 @@ public class MonsterView : MonoBehaviour
             txHP.text = string.Format("{0}/{1}", monsterData.curHP, monsterData.maxHP);
         }
     }
+
+    public int GetKeyID()
+    {
+        return monsterData.keyID;
+    }
 }

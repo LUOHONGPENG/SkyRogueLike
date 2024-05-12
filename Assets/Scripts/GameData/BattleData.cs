@@ -30,10 +30,11 @@ public class BattleData
     public BattleMonsterData AddMonsterData(int excelID)
     {
         BattleMonsterData monsterData = new BattleMonsterData(excelID);
-        monsterKeyID++;
 
         dicMonsterData.Add(monsterKeyID, monsterData);
         listMonsterData.Add(monsterData);
+        monsterData.SetKeyID(monsterKeyID);
+        monsterKeyID++;
 
         return monsterData;
     }
