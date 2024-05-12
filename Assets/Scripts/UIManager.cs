@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
+    public CardManager cardManager;
     public void Init()
     {
-
+        cardManager.Init();
 
     }
 }
